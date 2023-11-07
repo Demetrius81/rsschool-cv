@@ -262,12 +262,12 @@ DROP PROCEDURE nums;
 
 #### Courses:
 
-GeekBrains ASP.NET develloper (in progress)
-GeekBrains Front-end develloper (in progress)
++ GeekBrains ASP.NET develloper (in progress)
++ GeekBrains Front-end develloper (in progress)
 ***
 
 #### Languages:
-English - A2
-Russian - Native
-Belorussian - Native
++ English - A2
++ Russian - Native
++ Belorussian - Native
 ***
