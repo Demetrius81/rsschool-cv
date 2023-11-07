@@ -1,17 +1,19 @@
-#### Ryzhou Dzmitry
+## Ryzhou Dzmitry
+
+![It's me](/img/me.jpg)
 ---
 
 ### Junior Fullstack Developer
 ***
 
-# Contact information:
-**Phone:** +375 44 7154428
-**E-mail:** demetrius81ryzhov@gmail.com
-**Telegram:** @demetrius_q
-**LinkedIn** https://www.linkedin.com/in/dmitry-ryzhov-87402a229
+#### Contact information:
+* **Phone:** +375 44 7154428
+* **E-mail:** demetrius81ryzhov@gmail.com
+* **Telegram:** @demetrius_q
+* **LinkedIn** https://www.linkedin.com/in/dmitry-ryzhov-87402a229
 ***
 
-**Briefly About Myself:**
+#### Briefly About Myself:
 I started my career as an engineer at a car factory. Throughout this time, I have encountered new technologies, successfully studied them and applied them in the process of work.
 
 Two years ago I decided to connect my career with software development. To do this, I enrolled in .NET development courses. I used the courses as a roadmap for my learning and learned most of the material from Microsoft documentation.
@@ -20,19 +22,18 @@ At the same time, I was interested in front-end development and studied the Vue.
 I like to study and learn new things. My persistence and pedantry will definitely help me become a high-level specialist.
 ***
 
-**Skills and Proficiency:**
-HTML5, CSS3
-JavaScript, Vue.js
-C#, ASP.NET, WPF
-MVC, MVP, MVVM
-Python
-Java
-SQL
-Git, GitHub
-VS Code, Microsoft Visual Studio,  IntelliJ Idea,  IntelliJ PyCharm, Figma
+#### Skills and Proficiency:
+- HTML5, CSS3
+- JavaScript, Vue.js
+- C#, ASP.NET, WPF
+- MVC, MVP, MVVM
+- Java
+- SQL
+- Git, GitHub
+- VS Code, Microsoft Visual Studio, IntelliJ dotPeek, IntelliJ Rider, IntelliJ Idea, Figma
 ***
 
-JavaScript code example:
+**JavaScript function code example:**
 
 ```
 const saveUserData = async (user, url) => {
@@ -72,47 +73,80 @@ const saveUserData = async (user, url) => {
 };
 ```
 
-Vue.js code example:
+**Vue.js component code example:**
 
 ```
-const saveUserData = async (user, url) => {
-  if (user === null || user === undefined) {
-    throw new Error(`Invalid argument: userId.`);
-  }
+<template>
+  <button class="button" @click="click">
+    <svg
+      width="10"
+      height="20"
+      viewBox="0 0 10 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.00012 19L9.00012 10L1.00012 1"
+        stroke="#292F36"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+</template>
 
-  if (url === null || url.constructor.name !== "String") {
-    throw new Error(`Invalid argument: url.`);
-  }
+<script>
+export default {
+  name: "ButtonComponent",
 
-  let response = null;
-  let result = null;
-  let bodyString = JSON.stringify(user);
+  data() {
+    return {};
+  },
 
-  try {
-    response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: bodyString,
-    });
+  mounted() {},
 
-    if (response.ok) {
-      result = response.status;
-    } else {
-      throw new Error(
-        `We have some problems! Look, response status is ${response.status}.`
-      );
-    }
-  } catch (error) {
-    throw new Error(error.message);
-  }
-
-  return result;
+  methods: {
+    click() {
+      this.$emit("clickbtn");
+    },
+  },
 };
+</script>
+
+<style lang="scss" scoped>
+@import "@/styles/_variables.scss";
+@import "@/styles/_style_default.scss";
+
+.button {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $colorBacgroundBtnBigCard;
+
+  & svg {
+    width: 10px;
+    height: 20px;
+  }
+
+  & svg path {
+    stroke: $colorTextBasic;
+  }
+
+  &:hover {
+    background: $colorBacgroundBtnHover;
+    transition: all 0.3s ease;
+  }
+}
+</style>
+
 ```
 
-c# code example :
+**c# class code example :**
 
 ```
 /// <summary>Red-black tree node class</summary>
@@ -131,7 +165,7 @@ internal class Node<T> where T : IComparable<T>
 }
 ```
 
-Java code example:
+**Java class code example:**
 
 ```
 package org.NoteBook.Controller;
@@ -183,15 +217,56 @@ public class NoteBookLogic implements ILogic {
 }
 
 ```
+**SQL function and procedure script example:**
+
+```
+DROP FUNCTION IF EXISTS nums;
+DELIMITER $$
+CREATE FUNCTION nums() RETURNS VARCHAR(50)
+DETERMINISTIC
+  BEGIN
+    DECLARE i INT;
+        DECLARE str VARCHAR(50);
+        SET str = ' ';
+    SET i = 2;
+    WHILE i < 11 DO
+      SET str = CONCAT(str, ' ', i);
+            SET i = i + 2;
+    END WHILE;
+RETURN str;
+END $$
+DELIMITER ;
+SELECT nums();
+
+DELIMITER $$
+CREATE PROCEDURE nums()
+  BEGIN
+    DECLARE i INT;
+    SET i = 2;
+    CREATE TEMPORARY TABLE nums (numbers int);
+    WHILE i < 11 DO
+      INSERT INTO nums VALUES (i);
+      SET i = i + 2;
+    END WHILE;
+    SELECT * FROM nums;
+    DROP TABLE IF EXISTS nums;
+END $$
+DELIMITER ;
+
+CALL nums();
+
+DROP PROCEDURE nums;
+
+```
 ***
 
-**Courses:**
+#### Courses:
 
 GeekBrains ASP.NET develloper (in progress)
 GeekBrains Front-end develloper (in progress)
 ***
 
-**Languages:**
+#### Languages:
 English - A2
 Russian - Native
 Belorussian - Native
